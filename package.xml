@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package format="1">
+  <name>BananaForScale</name>
+  <version>0.1.0</version>
+  <date>2026-07-04</date>
+  <description>Adds a banana for scale to FreeCAD.</description>
+
+  <maintainer email="FabioTavernini@proton.me">Fabio Tavernini</maintainer>
+  <license file="LICENSE">MIT</license>
+
+  <url type="repository">https://github.com/fabiotavernini/BananaForScale</url>
+  <url type="readme">https://github.com/fabiotavernini/BananaForScale/blob/main/README.md</url>
+
+  <thumbnail>Resources/media/screenshot.png</thumbnail>
+
+  <content>
+    <workbench>
+      <classname>BananaForScaleWorkbench</classname>
+    </workbench>
+  </content>
+</package>
