@@ -2,7 +2,7 @@ import os
 import FreeCADGui as Gui
 
 _ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-_ICON = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.png")
+_ICON = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.svg")
 
 
 class BananaForScaleWorkbench(Gui.Workbench):

@@ -1,10 +1,10 @@
 import os
 import FreeCAD as App
 import FreeCADGui as Gui
-import Part
+import Mesh as MeshModule
 
 _ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-STEP_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "banana.step")
+MODEL_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "banana.stl")
 
 
 class AddBananaForScaleCommand:
@@ -20,13 +20,9 @@ class AddBananaForScaleCommand:
         if doc is None:
             doc = App.newDocument("Banana_For_Scale")
 
-        shape = Part.Shape()
-        shape.read(STEP_PATH)
-
-        obj = doc.addObject("Part::Feature", "Banana_for_scale")
-        obj.Shape = shape
+        obj = doc.addObject("Mesh::Feature", "Banana_for_scale")
+        obj.Mesh = MeshModule.Mesh(MODEL_PATH)
         obj.ViewObject.ShapeColor = (1.0, 0.82, 0.05)
-        obj.ViewObject.DisplayMode = "Shaded"
 
         doc.recompute()
         Gui.SendMsgToActiveView("ViewFit")
