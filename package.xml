@@ -6,12 +6,12 @@
   <description>Adds a banana for scale to FreeCAD.</description>
 
   <maintainer email="FabioTavernini@proton.me">Fabio Tavernini</maintainer>
-  <license file="LICENSE">MIT</license>
+  <license file="LICENSE-Code">MIT</license>
 
   <url type="repository">https://github.com/fabiotavernini/BananaForScale</url>
   <url type="readme">https://github.com/fabiotavernini/BananaForScale/blob/main/README.md</url>
 
-  <thumbnail>Resources/media/banana.png</thumbnail>
+  <thumbnail>Resources/Icons/banana.png</thumbnail>
 
   <content>
     <workbench>

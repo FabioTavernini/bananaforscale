@@ -1,14 +1,17 @@
 import os
-import FreeCAD as App
 import FreeCADGui as Gui
+
+_ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_ICON = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.png")
+
 
 class BananaForScaleWorkbench(Gui.Workbench):
     MenuText = "Banana For Scale"
     ToolTip = "Adds a banana for scale to your FreeCAD document"
-    Icon = os.path.join(App.getUserAppDataDir(), "Mod", "bananaforscale", "Resources", "media", "banana.png")
+    Icon = _ICON
 
     def Initialize(self):
-        import banana_command
+        from . import banana_command
         self.appendToolbar("Banana Tools", ["Banana_AddForScale"])
         self.appendMenu("Banana For Scale", ["Banana_AddForScale"])
 
@@ -19,7 +22,4 @@ class BananaForScaleWorkbench(Gui.Workbench):
         pass
 
 
-try:
-    Gui.addWorkbench(BananaForScaleWorkbench())
-except Exception as e:
-    App.Console.PrintError(f"BananaForScale: failed to register workbench: {e}\n")
+Gui.addWorkbench(BananaForScaleWorkbench())

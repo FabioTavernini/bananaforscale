@@ -3,7 +3,8 @@ import FreeCAD as App
 import FreeCADGui as Gui
 import Part
 
-STEP_PATH = os.path.join(os.path.dirname(__file__), "Resources", "Models", "banana.step")
+_ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+STEP_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "banana.step")
 
 
 class AddBananaForScaleCommand:
