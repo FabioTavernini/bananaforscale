@@ -12,8 +12,9 @@ class BananaForScaleWorkbench(Gui.Workbench):
 
     def Initialize(self):
         from . import banana_command
-        self.appendToolbar("Banana Tools", ["Banana_AddForScale"])
-        self.appendMenu("Banana For Scale", ["Banana_AddForScale"])
+        from . import can_command
+        self.appendToolbar("Banana Tools", ["Banana_AddForScale", "Banana_AddCanForScale"])
+        self.appendMenu("Banana For Scale", ["Banana_AddForScale", "Banana_AddCanForScale"])
 
     def Activated(self):
         pass

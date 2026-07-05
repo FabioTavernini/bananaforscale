@@ -1,6 +1,6 @@
 # BananaForScale
 
-A FreeCAD addon that adds a banana for scale to your document.
+A FreeCAD addon that inserts real-world reference objects into your document so you always have something to compare against.
 
 ![readme-screenshot](Resources/Media/readmescreenshot.png)
 
@@ -11,5 +11,9 @@ Install via the FreeCAD Addon Manager.
 
 ## Usage
 
-Switch to the **Banana For Scale** workbench and click **Add Banana for Scale**.
-The banana will be inserted and the transform tool will open so you can position it immediately.
+Switch to the **Banana For Scale** workbench and click either:
+
+- **Add Banana for Scale** — inserts a banana (~180 mm long)
+- **Add Can for Scale** — inserts a classic soda can (440 ml)
+
+The object will be inserted and the transform tool will open immediately so you can position it in your scene.
