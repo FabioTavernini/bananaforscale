@@ -5,6 +5,7 @@ import Mesh as MeshModule
 
 _ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODEL_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "banana.stl")
+ICON_PATH = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.svg")
 
 
 class AddBananaForScaleCommand:
@@ -12,7 +13,7 @@ class AddBananaForScaleCommand:
         return {
             "MenuText": "Add Banana for Scale",
             "ToolTip": "Adds a banana for scale to the document",
-            "Pixmap": "",
+            "Pixmap": ICON_PATH,
         }
 
     def Activated(self):
