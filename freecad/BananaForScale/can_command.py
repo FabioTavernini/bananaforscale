@@ -6,7 +6,7 @@ import Mesh as MeshModule
 _ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODEL_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "can.stl")
 # TODO: replace with a dedicated can icon; reusing banana.svg as a placeholder for now.
-ICON_PATH = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.svg")
+ICON_PATH = os.path.join(_ADDON_DIR, "Resources", "Icons", "can.svg")
 
 
 class AddCanForScaleCommand:
