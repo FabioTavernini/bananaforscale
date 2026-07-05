@@ -1,26 +1,34 @@
-import os
-import FreeCADGui as Gui
+from contextlib import suppress
+from typing import ClassVar
 
-_ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-_ICON = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.svg")
+import FreeCAD as App
 
-
-class BananaForScaleWorkbench(Gui.Workbench):
-    MenuText = "Banana For Scale"
-    ToolTip = "Adds a banana for scale to your FreeCAD document"
-    Icon = _ICON
-
-    def Initialize(self):
-        from . import banana_command
-        from . import can_command
-        self.appendToolbar("Banana Tools", ["Banana_AddForScale", "Banana_AddCanForScale"])
-        self.appendMenu("Banana For Scale", ["Banana_AddForScale", "Banana_AddCanForScale"])
-
-    def Activated(self):
-        pass
-
-    def Deactivated(self):
-        pass
+from . import banana_command  # noqa: F401 — registers Banana_AddForScale
+from . import can_command  # noqa: F401 — registers Banana_AddCanForScale
 
 
-Gui.addWorkbench(BananaForScaleWorkbench())
+class WorkbenchManipulator:
+    _instance: ClassVar["WorkbenchManipulator | None"] = None
+
+    def modifyMenuBar(self):
+        return []
+
+    def modifyContextMenu(self, recipient):
+        return []
+
+    def modifyToolBars(self):
+        return [
+            {"append": "Banana_AddForScale", "toolBar": "View"},
+            {"append": "Banana_AddCanForScale", "toolBar": "View"},
+        ]
+
+    @classmethod
+    def install(cls):
+        if App.GuiUp and cls._instance is None:
+            cls._instance = WorkbenchManipulator()
+            App.Gui.addWorkbenchManipulator(cls._instance)
+            with suppress(Exception):
+                App.Gui.activeWorkbench().reloadActive()
+
+
+WorkbenchManipulator.install()

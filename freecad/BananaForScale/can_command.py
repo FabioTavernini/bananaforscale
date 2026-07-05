@@ -5,6 +5,8 @@ import Mesh as MeshModule
 
 _ADDON_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODEL_PATH = os.path.join(_ADDON_DIR, "Resources", "Models", "can.stl")
+# TODO: replace with a dedicated can icon; reusing banana.svg as a placeholder for now.
+ICON_PATH = os.path.join(_ADDON_DIR, "Resources", "Icons", "banana.svg")
 
 
 class AddCanForScaleCommand:
@@ -12,7 +14,7 @@ class AddCanForScaleCommand:
         return {
             "MenuText": "Add Can for Scale",
             "ToolTip": "Adds a soda can for scale to the document",
-            "Pixmap": "",
+            "Pixmap": ICON_PATH,
         }
 
     def Activated(self):
