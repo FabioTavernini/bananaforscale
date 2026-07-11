@@ -11,7 +11,7 @@ Install via the FreeCAD Addon Manager.
 
 ## Usage
 
-Switch to the **Banana For Scale** workbench and click either:
+Click either:
 
 - **Add Banana for Scale** — inserts a banana (~180 mm long)
 - **Add Can for Scale** — inserts a classic soda can (440 ml)
