@@ -7,7 +7,7 @@ A FreeCAD addon that inserts real-world reference objects into your document so 
 
 ## Installation
 
-Install via the FreeCAD Addon Manager.
+Install via the FreeCAD Addon Manager, then **restart FreeCAD**. The toolbar buttons are added by a workbench manipulator, which only registers on startup, and the Addon Manager won't prompt you to restart automatically for this type of addon.
 
 ## Usage
 
